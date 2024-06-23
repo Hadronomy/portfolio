@@ -3,18 +3,20 @@
   "private": true,
   "scripts": {
     "prepare": "lefthook install",
-    "format": "pnpm biome format --write .",
+    "format": "pnpm biome format --write .; pnpm prettier --write .",
     "lint": "pnpm biome lint --apply .",
     "ci": "pnpm biome check --apply --no-errors-on-unmatched",
     "fix": "manypkg fix"
   },
-  "packageManager": "pnpm@8.6.6",
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631",
   "dependencies": {
     "@biomejs/biome": "^1.5.3",
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
     "@manypkg/cli": "0.21.0",
     "lefthook": "^1.6.1",
-    "turbo": "1.12.2"
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.14.0",
+    "turbo": "2.0.3"
   }
 }

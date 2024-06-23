@@ -1,19 +1,19 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env*.local"],
-  "pipeline": {
+  "globalEnv": ["NODE_ENV", "VERCEL_URL", "PORT"],
+  "tasks": {
     "start": {
       "dependsOn": ["^start", "build"],
       "persistent": true
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "next-env.d.ts"]
+      "outputs": [".astro/**", "dist/**"]
     },
     "dev": {
       "persistent": true,
-      "cache": false,
-      "dependsOn": ["^build"]
+      "cache": false
     },
     "format": {
       "dependsOn": ["^format"]
@@ -21,6 +21,5 @@
     "lint-staged": {
       "dependsOn": ["^lint-staged"]
     }
-  },
-  "globalEnv": ["NODE_ENV", "VERCEL_URL", "PORT"]
+  }
 }
